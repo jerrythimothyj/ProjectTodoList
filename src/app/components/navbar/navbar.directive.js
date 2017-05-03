@@ -1,4 +1,4 @@
-export function NavbarDirective() {
+export function navbarDirective() {
   'ngInject';
 
   let directive = {
@@ -16,10 +16,8 @@ export function NavbarDirective() {
 }
 
 class NavbarController {
-  constructor (moment) {
+  constructor () {
     'ngInject';
 
-    // "this.creationDate" is available by directive option "bindToController: true"
-    this.relativeDate = moment(this.creationDate).fromNow();
   }
 }

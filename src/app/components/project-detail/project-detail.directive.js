@@ -18,7 +18,5 @@ export function projectDetailDirective() {
 class ProjectDDetailController {
   constructor () {
     'ngInject';
-
-    console.log(this.projectDetail)
   }
 }

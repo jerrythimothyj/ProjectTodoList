@@ -1,39 +1,26 @@
-// /**
-//  * @todo Complete the test
-//  * This example is not perfect.
-//  * Test should check if MomentJS have been called
-//  */
-// describe('directive navbar', function() {
-//   let vm;
-//   let element;
-//   let timeInMs;
+describe("Project Detail Directive", function() {
 
-//   beforeEach(angular.mock.module('projectManagement'));
+  let $rootScope, $compile, httpBackend,fakedMainResponse;
 
-//   beforeEach(inject(($compile, $rootScope) => {
-//     const currentDate = new Date();
-//     timeInMs = currentDate.setHours(currentDate.getHours() - 24);
 
-//     element = angular.element(`
-//       <projects></projects>
-//     `);
+  //load all modules, including the html template, needed to support the test
+  beforeEach(angular.mock.module('projectManagement'));
 
-//     $compile(element)($rootScope.$new());
-//     $rootScope.$digest();
-//     vm = element.isolateScope().vm;
-//   }));
+  beforeEach(inject(function($templateCache,_$compile_,_$rootScope_,$httpBackend) {
 
-//   it('should be compiled', () => {
-//     expect(element.html()).not.toEqual(null);
-//   });
+    //assign the template to the expected url called by the directive and put it in the cache
+    httpBackend=$httpBackend;
+    $rootScope = _$rootScope_;
+    $compile = _$compile_;
 
-//   it('should have isolate scope object with instanciate members', () => {
-//     expect(vm).toEqual(jasmine.any(Object));
+    httpBackend.when('GET', 'app/components/project-detail/project-detail.html').respond(fakedMainResponse);
+  }));
 
-//     expect(vm.creationDate).toEqual(jasmine.any(Number));
-//     expect(vm.creationDate).toEqual(timeInMs);
 
-//     expect(vm.relativeDate).toEqual(jasmine.any(String));
-//     expect(vm.relativeDate).toEqual('a day ago');
-//   });
-// });
+  it("Declare", function() {    
+    var formElement = angular.element('<project-detail></project-detail>');
+    $compile(formElement)($rootScope);
+    $rootScope.$digest();
+  })
+
+});

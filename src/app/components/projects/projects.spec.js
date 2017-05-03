@@ -1,39 +1,34 @@
-// /**
-//  * @todo Complete the test
-//  * This example is not perfect.
-//  * Test should check if MomentJS have been called
-//  */
-// describe('directive navbar', function() {
-//   let vm;
-//   let element;
-//   let timeInMs;
+describe("Projects Directive", function() {
 
-//   beforeEach(angular.mock.module('projectManagement'));
+  let $rootScope, $compile, httpBackend,fakedMainResponse;
 
-//   beforeEach(inject(($compile, $rootScope) => {
-//     const currentDate = new Date();
-//     timeInMs = currentDate.setHours(currentDate.getHours() - 24);
 
-//     element = angular.element(`
-//       <projects></projects>
-//     `);
+  //load all modules, including the html template, needed to support the test
+  beforeEach(angular.mock.module('projectManagement'));
 
-//     $compile(element)($rootScope.$new());
-//     $rootScope.$digest();
-//     vm = element.isolateScope().vm;
-//   }));
+  beforeEach(inject(function($controller, $templateCache,_$compile_,_$rootScope_,$httpBackend) {
 
-//   it('should be compiled', () => {
-//     expect(element.html()).not.toEqual(null);
-//   });
+    //assign the template to the expected url called by the directive and put it in the cache
+    httpBackend=$httpBackend;
+    $rootScope = _$rootScope_;
+    $compile = _$compile_;
+    // scope = $rootScope.$new();
 
-//   it('should have isolate scope object with instanciate members', () => {
-//     expect(vm).toEqual(jasmine.any(Object));
+    httpBackend.when('GET', 'app/components/projects/projects.html').respond(fakedMainResponse);
 
-//     expect(vm.creationDate).toEqual(jasmine.any(Number));
-//     expect(vm.creationDate).toEqual(timeInMs);
+    // ProjectsController = $controller('ProjectsController',{$scope: scope});
 
-//     expect(vm.relativeDate).toEqual(jasmine.any(String));
-//     expect(vm.relativeDate).toEqual('a day ago');
-//   });
-// });
+  }));
+
+
+  it("Declare", function() {    
+    var formElement = angular.element('<projects></projects>');
+    $compile(formElement)($rootScope);
+    $rootScope.$digest();
+  })
+
+  // it('ProjectsController should be defined', function () {
+  //     expect(ProjectsController).toBeDefined();
+  // });
+
+});

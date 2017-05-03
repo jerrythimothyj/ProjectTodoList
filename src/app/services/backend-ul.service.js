@@ -13,10 +13,6 @@ export default class backendUlSer {
     get(key, obj) {
         let reqURl = this.allApi.baseUrl + this.allApi[key];
         obj = obj ? obj : {};
-
-        _.forEach(obj,function(value,key){
-            reqURl = reqURl.replace(':'+key,value);
-        });
         
         return  reqURl;
     }

@@ -1,39 +1,27 @@
-/**
- * @todo Complete the test
- * This example is not perfect.
- * Test should check if MomentJS have been called
- */
-describe('directive navbar', function() {
-  let vm;
-  let element;
-  let timeInMs;
+describe("Navbar Directive", function() {
 
-  beforeEach(angular.mock.module('myNewProject'));
+  let $compile, $rootScope, httpBackend,fakedMainResponse;
 
-  beforeEach(inject(($compile, $rootScope) => {
-    const currentDate = new Date();
-    timeInMs = currentDate.setHours(currentDate.getHours() - 24);
 
-    element = angular.element(`
-      <acme-navbar creation-date="${timeInMs}"></acme-navbar>
-    `);
+  //load all modules, including the html template, needed to support the test
+  beforeEach(angular.mock.module('projectManagement'));
 
-    $compile(element)($rootScope.$new());
-    $rootScope.$digest();
-    vm = element.isolateScope().vm;
+  beforeEach(inject(function($templateCache,_$compile_,_$rootScope_,$httpBackend) {
+
+    //assign the template to the expected url called by the directive and put it in the cache
+    httpBackend=$httpBackend;
+    $compile = _$compile_;
+    $rootScope = _$rootScope_;
+
+    httpBackend.when('GET', 'app/components/navbar/navbar.html').respond(fakedMainResponse);
   }));
 
-  it('should be compiled', () => {
-    expect(element.html()).not.toEqual(null);
-  });
 
-  it('should have isolate scope object with instanciate members', () => {
-    expect(vm).toEqual(jasmine.any(Object));
+  it("Declare", function() {    
+    var formElement = angular.element('<navbar></navbar>');
+    $compile(formElement)($rootScope);
+    $rootScope.$digest();
 
-    expect(vm.creationDate).toEqual(jasmine.any(Number));
-    expect(vm.creationDate).toEqual(timeInMs);
+  })
 
-    expect(vm.relativeDate).toEqual(jasmine.any(String));
-    expect(vm.relativeDate).toEqual('a day ago');
-  });
 });
