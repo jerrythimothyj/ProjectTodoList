@@ -1,0 +1,18 @@
+[
+	{
+		"sl": 1,
+		"name": "Apple",
+		"status": "1"
+	},
+	{
+		"sl": 2,
+		"name": "Banana",
+		"status": "0"
+	},
+	{
+		"sl": 3,
+		"name": "Carrot",
+		"status": "1"
+	}
+
+]

@@ -1,0 +1,7 @@
+{
+	"sl": 1,
+	"name": "Apple",
+	"status": "1",
+	"tech_stack": ["AngularJS", "NodeJS", "HTML5", "CSS3", "Javascript"],
+	"team": ["Kurt", "Sean", "Kathy", "John"]
+}

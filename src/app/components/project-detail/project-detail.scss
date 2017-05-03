@@ -1,0 +1,25 @@
+.projects-grid {
+    thead {
+    	tr {
+	    	th {
+	    		cursor: pointer;
+
+	    		.sortorder:after {
+				  content: '\25b2';   // BLACK UP-POINTING TRIANGLE
+				}
+				.sortorder.reverse:after {
+				  content: '\25bc';   // BLACK DOWN-POINTING TRIANGLE
+				}
+	    	}
+	    }
+    }
+
+	tbody {
+		tr {
+			td {
+				padding-left: 10px;
+				padding-right: 10px;
+			}
+		}
+	}
+}

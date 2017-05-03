@@ -1,0 +1,33 @@
+<div class="table-responsive projects-grid">          
+<table class="table">
+    <thead>
+      <tr>
+        <th>
+          #
+        </th>
+        <th data-ng-click="pc.sortBy('name')">
+          Name
+          <span class="sortorder" 
+                data-ng-show="pc.propertyName === 'name'" 
+                data-ng-class="{reverse: pc.reverse}">
+          </span>
+        </th>
+        <th data-ng-click="pc.sortBy('status')">
+          Status
+          <span class="sortorder" 
+                data-ng-show="pc.propertyName === 'status'" 
+                data-ng-class="{reverse: pc.reverse}">
+          </span>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr data-ng-repeat="project in pc.projects | filter: pc.searchProject | orderBy:pc.propertyName:pc.reverse track by $index"
+          data-ng-click="pc.openProject({sl: $index + 1})">
+        <td>{{$index + 1}}</td>
+        <td>{{project.name}}</td>
+        <td>{{project.status == 1? 'Done' : 'Pending'}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

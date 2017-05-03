@@ -1,0 +1,34 @@
+<div class="table-responsive projects-grid">          
+  <uib-tabset active="active">
+    <uib-tab index="0" heading="Project">
+      <table class="table">
+          <tr>
+            <th>ID</th>
+            <td>{{pddc.projectDetail.sl}}</td>
+          </tr>
+          <tr>
+            <th>Name</th>
+            <td>{{pddc.projectDetail.name}}</td>
+          </tr>
+          <tr>
+            <th>Status</th>
+            <td>{{pddc.projectDetail.status}}</td>
+          </tr>
+      </table>
+    </uib-tab>
+    <uib-tab index="1" heading="Tech Stack">
+      <table class="table">
+          <tr data-ng-repeat="tech in pddc.projectDetail.tech_stack">
+            <td>{{tech}}</td>
+          </tr>
+      </table>
+    </uib-tab>
+    <uib-tab index="2" heading="Team">
+      <table class="table">
+          <tr data-ng-repeat="member in pddc.projectDetail.team">
+            <td>{{member}}</td>
+          </tr>
+      </table>
+    </uib-tab>
+  </uib-tabset>
+</div>
