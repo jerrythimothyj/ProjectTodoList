@@ -8,7 +8,7 @@ import { default as component } from '../app/components/component.module';
 import { default as services } from '../app/services/services.module';
 import { default as domain } from '../app/domain/domain.module';
 
-angular.module('projectManagement', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngMessages', 'ngAria', 'ui.router', 'ui.bootstrap', 'toastr', 
+angular.module('projectManagement', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngMessages', 'ngAria', 'ui.router', 'ui.bootstrap', 'toastr', 'nvd3', 'ngTagCloud', 
                                 pages, component, services, domain])
   .config(config)
   .config(routerConfig)

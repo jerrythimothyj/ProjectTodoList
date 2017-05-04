@@ -1,0 +1,14 @@
+.top-sticky {
+	.top-sticky--title {
+		color: $col-primary;
+
+		@extend .ty-big-title;
+	}
+
+	.top-sticky--val {
+		text-align: right;
+		color: $col-primary-dark;
+
+		@extend .ty-hl;
+	}
+}

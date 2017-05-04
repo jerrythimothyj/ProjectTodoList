@@ -8,7 +8,7 @@ export function navbarDirective() {
         creationDate: '='
     },
     controller: NavbarController,
-    controllerAs: 'vm',
+    controllerAs: 'nc',
     bindToController: true
   };
 

@@ -12,7 +12,9 @@ $icon-font-path: "../../bootstrap-sass/assets/fonts/bootstrap/";
 // bower:scss
 // endbower
 
-@import "../app/styles/app.scss";
+html {
+  font-size: 62.5%;
+}
 
 body {
 	margin-top: 60px;

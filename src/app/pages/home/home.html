@@ -1,6 +1,55 @@
-<div class="container-fluid">
+<div class="container-fluid home">
 
-  <projects projects="hc.projects"
-  			open-project="hc.openProject(sl)"></projects>
+<div class="row">
+	<div class="col-md-3">
+		<div class="card">
+			<top-sticky title="Closed"
+						val="7">
+			</top-sticky>
+		</div>
+	</div>
+	<div class="col-md-3">
+		<div class="card">
+			<top-sticky title="Open"
+						val="2">
+			</top-sticky>
+		</div>
+	</div>
+	<div class="col-md-3">
+		<div class="card">
+			<top-sticky title="In Progress"
+						val="3">
+			</top-sticky>
+		</div>
+	</div>
+	<div class="col-md-3">
+		<div class="card">
+			<top-sticky title="Top Collaborator"
+						val="Kurt">
+			</top-sticky>
+		</div>
+	</div>
+</div>
+<br>
+<div class="row">
+	<div class="col-md-6">
+		<div class="card">
+			<div class="card--title">Status</div>
+			<br>
+			<nvd3 options="hc.options" 
+				  data="hc.data">
+			</nvd3>
+		</div>
+	</div>
+	<div class="col-md-6">
+		<div class="card">
+			<div class="card--title">Projects</div>
+			<br>
+			<projects projects="hc.projects"
+	  				  open-project="hc.openProject(sl)">
+	  		</projects>
+	  	</div>
+	</div>
+</div>
 
 </div>

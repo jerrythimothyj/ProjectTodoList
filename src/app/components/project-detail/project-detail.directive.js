@@ -18,5 +18,12 @@ export function projectDetailDirective() {
 class ProjectDDetailController {
   constructor () {
     'ngInject';
+
+    this.data = angular.copy(this.projectDetail.tech_stack).map((tech) => {
+                  return {
+                    weight: Math.floor(Math.random() * 10) + 5,
+                    text: tech
+                  }
+                })
   }
 }

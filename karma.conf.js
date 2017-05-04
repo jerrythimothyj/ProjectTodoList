@@ -18,6 +18,10 @@ function listFiles() {
 
   var patterns = wiredep(wiredepOptions).js
     .concat([
+      'bower_components\\d3\\d3.js',
+      'bower_components\\nvd3\\build\\nv.d3.js',
+      'bower_components\\angular-nvd3\\dist\\angular-nvd3.js',
+      'bower_components\\angular-tag-cloud\\src\\ng-tag-cloud.js',
       path.join(conf.paths.tmp, '/serve/app/index.module.js'),
     ])
     .concat(pathSrcHtml);
@@ -47,7 +51,7 @@ module.exports = function(config) {
 
     ngHtml2JsPreprocessor: {
       stripPrefix: conf.paths.src + '/',
-      moduleName: 'myNewProject'
+      moduleName: 'projectManagement'
     },
 
     logLevel: 'WARN',

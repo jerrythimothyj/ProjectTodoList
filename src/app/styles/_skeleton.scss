@@ -1,0 +1,16 @@
+.card {
+	margin: 10px;
+	padding: 10px;
+	background-color: $col-white;
+	box-shadow: 10px 10px 5px $col-grey;
+
+	.card--title {
+		color: $col-primary;
+		
+		@extend .ty-title;
+	}
+
+	.card--val {
+		@extend .ty-hl
+	}
+}

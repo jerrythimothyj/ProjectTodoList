@@ -1,8 +1,8 @@
 .projects-grid {
 	th {
 		cursor: pointer;
-		background-color: $col-grey;
-		border: 1px solid $col-white;
+		background-color: $col-primary;
+		border: 1px solid $col-primary;
 
 		.sortorder:after {
 		  content: '\25b2';   // BLACK UP-POINTING TRIANGLE
@@ -16,6 +16,6 @@
 		padding-left: 10px;
 		padding-right: 10px;
 		background-color: $col-white;
-		border: 1px solid $col-grey;
+		border: 1px solid $col-primary;
 	}
 }
